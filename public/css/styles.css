@@ -1,0 +1,105 @@
+body {
+    /* background-color: teal; */
+    background-image: url("Lake.jpg");
+    background-size: 100%;
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+}
+
+#main {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; */
+}
+
+img {
+    align-self: center;
+    background-color: yellow;
+    height: 280px;
+    width: 280px;
+    /* object-fit: contain; */
+}
+.img-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 20px;
+    /* padding: 20px; */
+    text-align: center;
+    /* border: solid 5px black; */
+    border-radius: 20px;
+    /* padding: 0; */
+    /* background-color: teal; */
+    margin-top: 70px;
+}
+
+.card {
+    max-width: 300px;
+    border: solid 5px black;
+    margin-bottom: 20px;
+    background-color: teal;
+}
+.inputsContainer {
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* position: relative; */
+    display: grid;
+    align-items: center;
+    height: 70px;
+    width: 35px;
+}
+
+input {
+    background-color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+}
+
+button {
+    /* position: absolute; */
+    /* height: 25px; */
+    width: 90px;
+}
+
+.image {
+    background-color: black;
+    height: 280px;
+    width: 280px;
+}
+
+.whatever {
+    display: inline-block;
+    align-self: center;
+    text-align: center;
+    background-color: gray;
+    height: 100%;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+}
+
+.popup-box {
+    height: 400px;
+    /* overflow: scroll; */
+}
+
+.popup-box img {
+    height: 350px;
+    width: 350px;
+}
+
+.more-button {
+    margin-left: 600px;
+    text-align: center;
+}

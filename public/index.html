@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <title>Image Board</title>
+</head>
+<link rel="stylesheet" href="/css/styles.css">
+<body>
+    <header class="header"><h1>NATURE 🌲 BOARD
+    </h1>
+    </header>
+    <div id="main">
+
+        <!-- <div v-for='planet in planets'>
+            <h1 @click='showModalMethod(imageId.name)'>{{ planet.name }}</h1>
+        </div> -->
+
+
+        <image-modal
+            v-if='showModal'
+            :image-id='imageId'
+            @close='closeModalOnParent'
+        ></image-modal>
+        <!-- left side prefers to component, right side to Vue instance's data -->
+        <!-- IF your prop is written in camelCase (so 'planetName') then
+        the left side needs to be written in kebabcase: planet-name -->
+
+        <form class="inputsContainer">
+            <input v-model='form.title' type="text" name="title" placeholder="title">
+            <input v-model='form.description'type="text" name="description" placeholder="description">
+            <input v-model='form.username'type="text" name="username" placeholder="username">
+            <input @change='handleFileChange'type="file" name="file" accept="image/*">
+            <button  @click='handleClick'>Submit</button>
+        </form>
+        <div class="img-container">
+            <div class="card"  v-for="image in images">
+                <a :href="'#' + image.id">
+            <img
+                class = "image"
+                :src = "image.url"
+                :alt = "image.title"
+            >
+        </a>
+
+            <p>{{ image.title }}</p>
+            <p>{{ image.description }}</p>
+        </div>
+
+        </div>
+        <button class="more-button"  @click="moreClick" type="button" name="More ">More</button>
+
+    </div>
+
+    <script id='image-modal-template' type='text/x-template'>
+            <!-- all of the HTML for our component will be put in this div! -->
+            <div class="whatever">
+                <div class="popup-box">
+                <p @click='closeModal'>X</p>
+                <div>
+                <img
+                    :src = "url"
+
+                    >
+                </div>
+                <!-- <h2>{{username}} </h2> -->
+                <h2> {{title}} </h2>
+                <h3> {{description}} </h3>
+
+                <form>
+                     <h3>Add a comment</h3>
+                     <input v-model='comment' type="text" name="comment" placeholder="comment">
+                     <input v-model='username'type="text" name="username" placeholder="username">
+                     <button @click='handleClick'>Submit</button>
+                </form>
+                <div class="comments" v-for="comment in comments">
+                    <!-- I'm looping to the array cooments[] that is in data vue.component -->
+                    <!-- <h2>{{comment.username}} </h2> -->
+                    <h2>{{comment.comment}} </h2>
+                    </div>
+
+                </div>
+
+                <h1 @click='myClick'></h1>
+            </div>
+            </div>
+        </script>
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
+
+<div>
+<image-modal v-if='showModal'></image-modal>
+
+</div>
